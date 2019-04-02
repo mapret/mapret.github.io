@@ -1,0 +1,53 @@
+@font-face {
+	/* Source: https://www.fontsquirrel.com/fonts/Bitstream-Vera-Sans-Mono */
+	font-family: "VeraMono";
+	src: url("VeraMono-Regular.woff");
+}
+
+body {
+	font-family: VeraMono, monospace;
+	background-color: #1B1B1B;
+	color: #eaeaea;
+	padding: 1rem;
+	max-width: 40rem;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #b5e853;
+}
+
+h1 {
+	font-size: 2rem;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+}
+
+p {
+	margin-top: 0.5rem;
+}
+
+a {
+	color: #63c0f5;
+}
+
+.linkicon {
+	margin-top: 0.5rem;
+}
+
+.linkicon span {
+	margin-left: 0.5rem;
+}
+
+.linkicon img {
+	height: 2rem;
+	vertical-align: middle;
+}
