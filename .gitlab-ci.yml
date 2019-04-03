@@ -5,6 +5,7 @@ pages:
   script:
   - mkdir .public
   - cp -r * .public
+  - rm .public/CNAME
   - mv .public public
   artifacts:
     paths:
