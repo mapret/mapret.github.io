@@ -38,20 +38,29 @@ p {
 
 a {
 	color: #63c0f5;
-	text-decoration-color: #3e5d6b;
+	text-decoration: none;
+}
+
+a > u {
+	color: #3e5d6b;
+	text-decoration: underline;
+}
+
+a > u > span {
+	color: #63c0f5;
 }
 
 .linkicon {
 	margin-top: 0.5rem;
 }
 
-.linkicon span {
+.linkicon > a > span {
 	display: inline-block;
 	width: 3rem;
 	height: 2rem;
 }
 
-.linkicon span > img {
+.linkicon > a > span > img {
 	vertical-align: middle;
 	width: auto;
 	height: 100%;
