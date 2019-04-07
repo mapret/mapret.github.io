@@ -45,13 +45,13 @@ a {
 	margin-top: 0.5rem;
 }
 
-.linkicon div {
+.linkicon span {
 	display: inline-block;
 	width: 3rem;
 	height: 2rem;
 }
 
-.linkicon div > img {
+.linkicon span > img {
 	vertical-align: middle;
 	width: auto;
 	height: 100%;
