@@ -8,7 +8,7 @@ body {
 	font-family: VeraMono, monospace;
 	background-color: #1B1B1B;
 	color: #eaeaea;
-	line-height: 1.5rem;
+	line-height: 140%;
 	padding: 1rem;
 	max-width: 40rem;
 	display: block;
@@ -18,6 +18,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	color: #b5e853;
+	line-height: 100%;
 }
 
 h1 {
