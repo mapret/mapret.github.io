@@ -1,11 +1,11 @@
 @font-face {
-	/* Source: https://www.fontsquirrel.com/fonts/Bitstream-Vera-Sans-Mono */
-	font-family: "VeraMono";
-	src: url("VeraMono-Regular.woff");
+	/* Source: https://www.fontsquirrel.com/fonts/office-code-pro */
+	font-family: "OfficeCodePro";
+	src: url("OfficeCodePro-Regular.woff");
 }
 
 body {
-	font-family: VeraMono, monospace;
+	font-family: OfficeCodePro, monospace;
 	background-color: #1B1B1B;
 	color: #eaeaea;
 	line-height: 140%;
