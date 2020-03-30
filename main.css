@@ -53,18 +53,22 @@ a > u > span {
 
 .linkicon {
 	margin-top: 0.5rem;
+	display: flex;
 }
 
-.linkicon > a > span {
-	display: inline-block;
-	width: 3rem;
+.linkicon a {
+	display: inline-flex;
+	align-items: center;
+}
+
+.linkicon img {
+	max-width: 3rem;
 	height: 2rem;
 }
 
-.linkicon > a > span > img {
-	vertical-align: middle;
-	width: auto;
-	height: 100%;
+.linkicon > a > span, .linkicon > span:first-child {
+	width: 3rem;
+	height: 2rem;
 }
 
 li:before {
