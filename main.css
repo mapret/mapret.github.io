@@ -93,7 +93,7 @@ li:before {
 }
 
 .divtable > div > div:first-child {
-	padding-right: 0.5rem;
+	padding-right: 0.8rem;
 	vertical-align: top;
 	white-space: nowrap;
 }
