@@ -75,3 +75,34 @@ li:before {
 	content: ">> ";
 	color: #b5e853;;
 }
+
+.divtable {
+	display: table;
+}
+
+.divtable img {
+	border-radius: 0.5rem;
+}
+
+.divtable > div {
+	display: table-row;
+}
+
+.divtable > div > div {
+	display: table-cell;
+}
+
+.divtable > div > div:first-child {
+	padding-right: 0.5rem;
+	vertical-align: top;
+	white-space: nowrap;
+}
+
+.divtable > div:nth-child(even) {
+	height: 0.5rem;
+}
+
+.divtable > div > div:last-child {
+	width: 100%;
+	padding-left: 0.5rem;
+}
