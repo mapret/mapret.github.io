@@ -3,6 +3,6 @@
      width="100" height="100"
      xmlns="http://www.w3.org/2000/svg">
   <rect width="100" height="100" style="fill:#00C311"/>
-  <path d="M0 0 L35 0 L50 30 L50 100 L0 100" fill="#bf6755ff"/>
-  <path d="M50 30 L15 100 L85 100" fill="#476994ff"/>
+  <path d="M0 0 L35 0 L50 30 L50 100 L0 100" fill="#bf6755"/>
+  <path d="M50 30 L15 100 L85 100" fill="#476994"/>
 </svg>
