@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>btrfs-r2f</title>
+	<meta charset="utf-8">
+	<meta name="description" content="Project page of btrfs-r2f">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/png" href="favicon.png">
+	<link rel="stylesheet" type="text/css" href="../clear.css">
+	<link rel="stylesheet" type="text/css" href="../main.css">
+</head>
+<body>
+<h1>btrfs-r2f</h1>
+<p>An application to receive a btrfs command stream to a local folder on any file system.</p>
+<h2>Goal</h2>
+<blockquote> Btrfs is a modern copy on write (CoW) filesystem for Linux aimed at implementing advanced features while also focusing on fault tolerance, repair and easy administration.  <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;— <a href="https://btrfs.wiki.kernel.org" target="_blank" rel="noopener">btrfs.wiki.kernel.org</a></blockquote>
+<p>Btrfs can make <a href="https://man7.org/linux/man-pages/man8/btrfs-subvolume.8.html" target="_blank" rel="noopener">atomic snapshots</a> and store them as <a href="https://man7.org/linux/man-pages/man8/btrfs-send.8.html" target="_blank" rel="noopener">files</a>.
+The additionally functionality of storing only the differences to a previous snapshot makes this mechanism suitable for <a href="https://en.wikipedia.org/wiki/Incremental_backup" target="_blank" rel="noopener">incremental backups</a>.
+Restoring a backup from these files requires a btrfs partition, where all increments <a href="https://man7.org/linux/man-pages/man8/btrfs-receive.8.html" target="_blank" rel="noopener">are unpacked</a> in the same order as they were created.</p>
+<p>Requiring a btrfs partition to restore a backup is no major problem if the backup is used for restoring the filesystem on a server, which would need the partition anyways.
+Testing a backup, on the other hand, might be a slight inconvenience, since most Linux distributions do not use btrfs <a href="https://btrfs.wiki.kernel.org/index.php/Production_Users" target="_blank" rel="noopener">by default</a>. 
+Therefore, this tool was created.
+It can unpack (=receive) a btrfs command stream to a directory on any filesystem, which makes testing a sequence of incremental backups more accessible.
+Hence the name, r2f, receive to folder.</p>
+<h2>Building</h2>
+<p>This project is implemented in the <a href="https://golang.org/" target="_blank" rel="noopener">Go programming language</a>.</p>
+<p>To build the application, the <a href="https://golang.org/doc/install" target="_blank" rel="noopener">Go compiler</a> needs to be installed and available to the commandline.
+From the root of the repository, run the command</p>
+<pre>go build</pre>
+<p>, which generates the executable.</p>
+<h2>Running</h2>
+<pre>Usage: btrfs-r2f [options...]
+
+-i --input
+    Command stream file, stdin is used if not supplied
+-o --output
+    Target directory, default value "btrfs-subvolume"
+-d --dry-run
+    Dont actually create files, only print commands (useful with -v)
+-v --verbose
+    Print every command that is processed to stdout</pre>
+<h2>Testing</h2>
+<p>A suite of simple tests can be run with the built-in command <pre class="inline">go test</pre>.</p>
+<p>Additionally, exploratory tests are run from time to time, where a series of incremental backups is unpacked and then compared to the original snapshot.
+This is done by calculating the hash of each file in a btrfs snapthos with the command <pre class="inline">find . -type f -print0 | sort -z | xargs -r0 sha256sum</pre>,
+then running the same command on the restored directory and comparing the outputs.
+As of writing this, the exploratory test succeeded for a partition containing about 22000 files and directories with a total size of about 22GiB, contained in 87 backup files (full initial backup plus daily incremental backup).</p>
+<h2>Remarks</h2>
+<p>On Windows, symlinks cannot be created without administrator privileges by default.
+Therefore, symlinks are represented as shortcuts.
+This has the disadvantage that restored backups are not exactly equal to their original source, because shortcuts always end in .lnk, which is not shown in Windows Explorer, but becomes relevant when reading file names through a program.</p>
+<h2>License</h2>
+<p></p>
+<p>This project is licensed under the **GPLv3**.
+See <a href="LICENSE.txt" target="_blank" rel="noopener">LICENSE.txt</a> for the full license text.
+Since the short license notice recommended by the GPLv3 is not present in the source files, it is displayed here instead:</p>
+<pre>btrfs-r2f, an application to receive a btrfs command stream to a
+local folder on any file system.
+Copyright (C) 2020  Markus Prettner
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see &lt;https://www.gnu.org/licenses/>.</pre>
+
+</body>
+</html>
