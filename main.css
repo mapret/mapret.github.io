@@ -52,17 +52,16 @@ a > u > span {
 }
 
 pre {
-	color: #d0d0d0;
+	color: #d3d3d3;
 	background-color: #171717;
 	padding: 0.8rem;
 	overflow-x: auto;
 }
 
-.inline {
+.inline-pre {
+	color: #d3d3d3;
+	background-color: #171717;
 	padding: 0.1rem;
-	display: inline;
-	white-space: pre-wrap;
-	word-break: break-word;
 }
 
 blockquote {

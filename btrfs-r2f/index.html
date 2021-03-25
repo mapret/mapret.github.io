@@ -41,9 +41,9 @@ From the root of the repository, run the command</p>
 -v --verbose
     Print every command that is processed to stdout</pre>
 <h2>Testing</h2>
-<p>A suite of simple tests can be run with the built-in command <pre class="inline">go test</pre>.</p>
+<p>A suite of simple tests can be run with the built-in command <span class="inline-pre">go test</span>.</p>
 <p>Additionally, exploratory tests are run from time to time, where a series of incremental backups is unpacked and then compared to the original snapshot.
-This is done by calculating the hash of each file in a btrfs snapthos with the command <pre class="inline">find . -type f -print0 | sort -z | xargs -r0 sha256sum</pre>,
+This is done by calculating the hash of each file in a btrfs snapthos with the command <span class="inline-pre">find . -type f -print0 | sort -z | xargs -r0 sha256sum</span>,
 then running the same command on the restored directory and comparing the outputs.
 As of writing this, the exploratory test succeeded for a partition containing about 22000 files and directories with a total size of about 22GiB, contained in 87 backup files (full initial backup plus daily incremental backup).</p>
 <h2>Remarks</h2>

@@ -67,7 +67,7 @@ while text != '':
 	else:
 		formattext += '<p>' + gettext() + '</p>\n'
 
-formattext = re.sub('```(.*?)```', '<pre class="inline">\\1</pre>', formattext)
+formattext = re.sub('```(.*?)```', '<span class="inline-pre">\\1</span>', formattext)
 
 template = open('scripts/index.html.tmpl').read()
 template = template.replace('{{Title}}', project)
