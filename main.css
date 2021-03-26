@@ -1,14 +1,21 @@
 @font-face {
 	/* Source: https://www.fontsquirrel.com/fonts/office-code-pro */
-	font-family: "OfficeCodePro";
+	font-family: "fontmonospace";
 	src: url("OfficeCodePro-Regular.woff");
 }
 
+@font-face {
+	/* https://fonts.google.com/specimen/Raleway */
+	font-family: "fontregular";
+	src: url("Raleway-Regular.woff2");
+}
+
 body {
-	font-family: OfficeCodePro, monospace;
+	font-family: fontregular, sans-serif;
 	background-color: #1B1B1B;
 	color: #eaeaea;
-	line-height: 140%;
+	font-size: 1.2rem;
+	line-height: 130%;
 	padding: 1rem;
 	max-width: 40rem;
 	display: block;
@@ -22,13 +29,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: 2rem;
+	font-size: 2.2rem;
 	margin-top: 0.5rem;
 	margin-bottom: 1rem;
 }
 
 h2 {
-	font-size: 1.5rem;
+	font-size: 1.6rem;
 	margin-top: 2rem;
 	margin-bottom: 1rem;
 }
@@ -51,17 +58,24 @@ a > u > span {
 	color: #63c0f5;
 }
 
+pre, .inline-pre {
+	font-family: fontmonospace, monospace;
+	font-size: 0.9rem;
+	line-height: 130%;
+	border-left: 0.3rem solid #404040;
+	border-right: 0.3rem solid #404040;
+	background-color: #272727;
+}
+
 pre {
 	color: #d3d3d3;
-	background-color: #171717;
 	padding: 0.8rem;
 	overflow-x: auto;
 }
 
 .inline-pre {
 	color: #d3d3d3;
-	background-color: #171717;
-	padding: 0.1rem;
+	padding: 0.2rem;
 }
 
 blockquote {
