@@ -95,7 +95,7 @@ blockquote {
 	align-items: center;
 }
 
-.linkicon img {
+.linkicon img, h1 img {
 	max-width: 3rem;
 	height: 2rem;
 }
@@ -103,6 +103,10 @@ blockquote {
 .linkicon > a > span, .linkicon > span:first-child {
 	width: 3rem;
 	height: 2rem;
+}
+
+h1 > span {
+	padding-left: 1rem;
 }
 
 li:before {

@@ -50,12 +50,19 @@ def gettext():
 text = text.replace('<', '&lt;')
 text = re.sub('\\[(.*?)\\]\\((.*?)\\)', '<a href="\\2" target="_blank" rel="noopener">\\1</a>', text)
 
+githublink = 'https://github.com/mapret/' + project
+gitlablink = 'https://gitlab.com/mapret/' + project
+srcicons = ('<span>\n'
+            '<a href="' + githublink + '" target="_blank" rel="noopener"><img src="../github.svg"/></a>\n'
+            '<a href="' + gitlablink + '" target="_blank" rel="noopener"><img src="../gitlab.svg"/></a>\n'
+            '</span>')
+
 formattext = ''
 while text != '':
 	if text.startswith('\n'):
 		getline()
 	if text.startswith('# '):
-		formattext += '<h1>' + getline()[2:] + '</h1>\n'
+		formattext += '<h1>' + getline()[2:] + srcicons + '</h1>\n'
 	elif text.startswith('## '):
 		formattext += '<h2>' + getline()[3:] + '</h2>\n'
 	elif text.startswith('```'):
