@@ -53,8 +53,8 @@ text = re.sub('\\[(.*?)\\]\\((.*?)\\)', '<a href="\\2" target="_blank" rel="noop
 githublink = 'https://github.com/mapret/' + project
 gitlablink = 'https://gitlab.com/mapret/' + project
 srcicons = ('<span>\n'
-            '<a href="' + githublink + '" target="_blank" rel="noopener"><img src="../github.svg"/></a>\n'
-            '<a href="' + gitlablink + '" target="_blank" rel="noopener"><img src="../gitlab.svg"/></a>\n'
+            '<a href="' + githublink + '" target="_blank" rel="noopener"><img alt="github icon" src="../github.svg"/></a>\n'
+            '<a href="' + gitlablink + '" target="_blank" rel="noopener"><img alt="gitlab icon" src="../gitlab.svg"/></a>\n'
             '</span>')
 
 formattext = ''
