@@ -58,6 +58,10 @@ a > u > span {
 	color: #63c0f5;
 }
 
+b {
+	font-weight: bold;
+}
+
 pre, .inline-pre {
 	font-family: fontmonospace, monospace;
 	font-size: 0.9rem;

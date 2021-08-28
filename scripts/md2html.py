@@ -1,3 +1,4 @@
+import codecs
 import os
 import re
 import sys
@@ -75,6 +76,7 @@ while text != '':
 		formattext += '<p>' + gettext() + '</p>\n'
 
 formattext = re.sub('```(.*?)```', '<span class="inline-pre">\\1</span>', formattext)
+formattext = re.sub('\*\*(.*?)\*\*', '<b>\\1</b>', formattext)
 
 template = open('scripts/index.html.tmpl').read()
 template = template.replace('{{Title}}', project)
@@ -82,4 +84,4 @@ template = template.replace('{{Body}}', formattext)
 
 if not os.path.exists(project):
 	os.mkdir(project)
-open(project + '/index.html', 'w').write(template)
+codecs.open(project + '/index.html', 'w', 'utf-8').write(template)
