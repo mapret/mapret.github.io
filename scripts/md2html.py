@@ -6,10 +6,11 @@ import urllib.request
 
 
 project = sys.argv[1]
-githublink = 'https://raw.githubusercontent.com/mapret/{}/master/README.md'
-githublink = githublink.format(project)
-print('Fetching ' + githublink)
-text = urllib.request.urlopen(githublink).read().decode()
+rawgithublink = 'https://raw.githubusercontent.com/mapret/{}/master/'
+rawgithublink = rawgithublink.format(project)
+readmelink = rawgithublink + 'README.md'
+print('Fetching ' + readmelink)
+text = urllib.request.urlopen(readmelink).read().decode()
 #text = open('scripts/README.md', 'r').read()
 #print(text)
 
@@ -49,6 +50,7 @@ def gettext():
 	return getlinesuntil('', '```')
 
 text = text.replace('<', '&lt;')
+text = re.sub('\\[(.*?)\\]\\(([^/]*)\\)', '[\\1](' + rawgithublink + '\\2)', text)  # Substitute local paths, eg. [LICENSE.txt](LICENSE.txt)
 text = re.sub('\\[(.*?)\\]\\((.*?)\\)', '<a href="\\2" target="_blank" rel="noopener">\\1</a>', text)
 
 githublink = 'https://github.com/mapret/' + project
